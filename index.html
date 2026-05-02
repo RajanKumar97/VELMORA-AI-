@@ -5,8 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="https://readdy.cc/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Velmora AI — Mathematical Certainty in Every Lead</title>
-<meta name="referrer" content="no-referrer">
-    
+    <meta name="referrer" content="no-referrer">
     
     <meta name="description" content="Replace your SDR department with Velmora's 6-Agent Autonomous Workforce.">
     
@@ -28,16 +27,16 @@
 
     <script>
       // VELMORA DATABASE HANDSHAKE
-      // Using your Mumbai Project details
+      // Using Mumbai Project Vault details
       const SUPABASE_URL = 'https://sqtzgzbfocoymfynrdpn.supabase.co';
       const SUPABASE_KEY = 'sb_publishable_D4Zvdy0WrVe9Bvuyqb9WoA_XArPj-1N';
       
-      // Initialize the connection
+      // Initialize the connection with corrected syntax
       const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
       console.log("VELMORA SYSTEM: ONLINE");
 
-      // Function to capture and send leads
+      // Function to capture and send leads to Mumbai
       async function captureLead(email, name, agency) {
         const { data, error } = await supabase
           .from('leads')
