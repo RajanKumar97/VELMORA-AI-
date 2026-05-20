@@ -1,0 +1,93 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { IconUser, IconMapPin, IconGlobe, IconArrowRight } from './Icons';
+
+interface ArchitectSectionProps {
+  onDeployClick: () => void;
+}
+
+export default function ArchitectSection({ onDeployClick }: ArchitectSectionProps) {
+  const { ref, isVisible } = useScrollAnimation(0.05);
+
+  return (
+    <section id="architect" className="section-dark py-28 overflow-hidden" ref={ref}>
+      <div className="max-w-4xl mx-auto px-5">
+        <div className={`text-center mb-14 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <p className="text-[10px] tracking-[0.35em] text-white/30 uppercase mb-5 line-decoration justify-center font-bold">THE ARCHITECT</p>
+          <h2 className="font-heading text-[2rem] sm:text-[2.6rem] md:text-[3.2rem] font-bold text-white">
+            The Architect's <span className="text-gradient-accent">Manifesto.</span>
+          </h2>
+          <p className="mt-4 text-white/30 text-[15px] font-light">Built by Rajan Kumar to break the cycle of agency failure.</p>
+          <p className="text-white/15 text-[13px] font-light mt-1">Lucknow engineered. Globally deployed.</p>
+        </div>
+
+        <div className={`card-dark !border-l-2 !border-l-white/20 !rounded-l-none p-8 mb-6 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <span className="text-[2rem] text-white/10 font-heading leading-none">&ldquo;</span>
+          <div className="space-y-4 mt-1">
+            <p className="text-white/35 leading-[1.75] text-[13.5px] font-light">
+              I built Velmora AI after watching brilliant agencies collapse — not from lack of strategy, but from the compounding failure of human-dependent outreach. Every resignation letter was a revenue crater. Every sick day was a dead pipeline. Every inconsistent month was a client lost.
+            </p>
+            <p className="text-white/35 leading-[1.75] text-[13.5px] font-light">
+              I refused to accept that the only solution was to hire better humans. The real solution was to build a better system — one that operates with the precision of mathematics, the endurance of a machine, and the intelligence of a seasoned sales director.
+            </p>
+            <p className="text-white/60 leading-[1.75] text-[13.5px] font-medium">
+              Velmora AI is not a tool. It is the workforce your agency deserves — engineered from Lucknow, deployed globally, and built to make human SDR teams obsolete.
+            </p>
+          </div>
+        </div>
+
+        <div className={`card-dark p-7 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="flex items-center gap-4 mb-7">
+            <div className="w-14 h-14 rounded-full bg-white/[0.05] flex items-center justify-center">
+              <IconUser size={26} color="#ffffff" className="opacity-60" />
+            </div>
+            <div>
+              <h3 className="font-heading text-[17px] text-white tracking-wide">Rajan Kumar</h3>
+              <p className="text-[8px] tracking-[0.25em] text-white/30 uppercase font-bold">Founder & Chief Architect</p>
+              <p className="text-[12px] text-white/20 flex items-center gap-1.5 mt-1 font-light">
+                <IconMapPin size={11} color="currentColor" /> Lucknow, Uttar Pradesh, India
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { value: '6', label: 'AI AGENTS BUILT' },
+              { value: '0%', label: 'TURNOVER RATE' },
+              { value: '$56K+', label: 'SAVED PER CLIENT/YEAR' },
+              { value: '24/7', label: 'SYSTEM UPTIME' },
+            ].map((s) => (
+              <div key={s.label} className="stat-highlight-dark rounded-xl p-4 text-center">
+                <p className="text-[20px] font-bold text-white">{s.value}</p>
+                <p className="text-[7px] tracking-[0.22em] text-white/25 uppercase mt-1 font-bold">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={`mt-5 card-dark p-6 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="flex items-center gap-2.5 mb-3">
+            <IconGlobe size={15} color="#10b981" />
+            <span className="text-[9px] tracking-[0.25em] text-white/30 uppercase font-bold">Global Mission</span>
+          </div>
+          <p className="text-[13px] text-white/30 leading-[1.75] font-light">
+            To make algorithmic sales intelligence accessible to every agency on earth — eliminating the human bottleneck that has held back growth for decades.
+          </p>
+        </div>
+
+        <div className="mt-10 text-center">
+          <button onClick={onDeployClick}
+            className="btn-primary px-8 py-4 rounded-full text-[12px] font-semibold tracking-[0.1em] flex items-center gap-2.5 mx-auto cursor-pointer">
+            DEPLOY WORKFORCE — $299/MO <IconArrowRight size={15} />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+
+
+
+
+      
